@@ -1,0 +1,64 @@
+
+<div class="card">
+    <div class="card-header">
+        <h3>{{tituloPagina + ": " + auto.marca + " " + auto.modelo}}</h3>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            <div class="col-6 container  ">
+                <table class="col-0 container-fluid">
+                <thead>
+                    <tr>
+                        <th><label>Marca:</label></th>
+                        <th>{{auto.marca}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label>Modelo:</label></td>
+                        <td>{{auto.modelo}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>Año:</label></td>
+                        <td>{{auto.anio}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>Color:</label></td>
+                        <td>{{auto.color}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>kilómetros:</label></td>
+                        <td>{{auto.kilometros | number}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>Precio</label></td>
+                        <td>{{auto.precio | currency}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>Calificación:</label></td>
+                        <td>
+                            <app-estrellas 
+                                [calificacion]="auto.calificacion">
+                            </app-estrellas>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary " style="width: 110px;">
+                                Comprar
+                            </button>
+                        </td>
+                    </tr>  
+                </tbody>
+            </table>
+            </div>
+            <div class="col-6 container ">
+                {{auto.imagenUrl}}
+                <img src="{{auto.imagenUrl}}">
+            </div>
+        </div>
+    </div>
+   
+    <div class="card-footer">
+        <button class='btn btn-outline-secondary' style="width:110px" (click)="onBack()">
+        Regreso
+        </button>
+    </div>
